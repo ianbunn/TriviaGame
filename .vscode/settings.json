@@ -1,0 +1,8 @@
+{
+    "workbench.colorTheme": "Default High Contrast",
+    "editor.tokenColorCustomizations": {
+        "[Default High Contrast]": {
+            "comments": "#833434"
+        }
+    },
+}
