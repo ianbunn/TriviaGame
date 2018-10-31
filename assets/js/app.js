@@ -11,33 +11,46 @@ $(document).ready(function () {
 // Trivia object with properties and methods to start and run the game
 var trivia = {
 
+    // Default trivia properties
     correctAnswers: 0,
     incorrectAnswers: 0,
     unanswered: 0,
-    timer: 15,
+    timeLeft: "",
     timerId: "",
 
+    // Working the timer as a method of trivia (starting again here)
+    timer: function() {
+        clearInterval(timeLeft);
+
+        // Working on the timer for the questions (the below doesn't work)
+        // timer = setInterval(function () {
+
+        //     var timeLeft = 15;
+
+        //     this.timer - --timeLeft;
+
+        //     $("#timer").html("Time Remaining: " + this.startGame.timeLeft + " seconds");
+
+        //     if (timeLeft <= 0) {
+        //         clearInterval(this.timeLeft);
+        //     }
+
+        // }, 1000);
+        
+    },
+
+    // Start game with trivia's method
     startGame: function(){
 
-        // Starting game by adding hide and show element
+        // Starting game by adding hide and show
         $("#startGame").hide();
         $("#timer").show();
         $("#question").show();
         $("#choices").show();
 
-        // Working on the timer for the questions
-        var timeLeft = setInterval(function() {
-            
-            this.timer - --timeLeft;
-            $("#timer").html("Time Remaining: " + timeLeft + " seconds");
-            if(timeLeft <= 0) {
-                clearInterval(this.timeLeft);
-            }
-            
-        }, 1000);
-
     },
 
+    // Questions set as an object with properties
     questions: {
         question1: {
             question: "During his embarrassing Dundie award presentation, Michael covers a number of popular songs. To whom is Michael presenting a Dundie award when he sings along to 'You Sexy Thing' by '70s British funk band Hot Chocolate?",
@@ -79,7 +92,7 @@ var trivia = {
         },
 
         question4: {
-            question: "What is the exclusive club that Pam, Oscar, and Toby establish in the episode 'Branch Wars'",
+            question: "What is the exclusive club that Pam, Oscar, and Toby establish in the episode 'Branch Wars'?",
             choices: [
                 "Luxury Club",
                 "The Insiders Club",
@@ -131,7 +144,7 @@ var trivia = {
         },
 
         question8: {
-            question: "Who admits responsibility for inhaling pot smoke at an Alicia Keys concert in 'Drug Testing'?",
+            question: "Who admits responsibility for inhaling pot smoke at an Alicia Keys concert in 'Drug Testing' episode?",
             choices: [
                 "Jim",
                 "Ryan",
