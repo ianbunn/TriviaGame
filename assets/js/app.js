@@ -4,21 +4,19 @@ $(document).ready(function () {
 
         trivia.startGame();
 
-        // Timer to start when button is clicked
-        var timer = setInterval(function() {
-            $("#timer").html("Time Remaining: " + timer + " seconds")
-        }, 30 * 1000);
-
     })
 
 })
 
+// Trivia object with properties and methods to start and run the game
 var trivia = {
 
     correctAnswers: 0,
     incorrectAnswers: 0,
     unanswered: 0,
     timer: 15,
+    timerId: "",
+
     startGame: function(){
 
         // Starting game by adding hide and show element
@@ -26,8 +24,20 @@ var trivia = {
         $("#timer").show();
         $("#question").show();
         $("#choices").show();
-        
+
+        // Working on the timer for the questions
+        var timeLeft = setInterval(function() {
+            
+            this.timer - --timeLeft;
+            $("#timer").html("Time Remaining: " + timeLeft + " seconds");
+            if(timeLeft <= 0) {
+                clearInterval(this.timeLeft);
+            }
+            
+        }, 1000);
+
     },
+
     questions: {
         question1: {
             question: "During his embarrassing Dundie award presentation, Michael covers a number of popular songs. To whom is Michael presenting a Dundie award when he sings along to 'You Sexy Thing' by '70s British funk band Hot Chocolate?",
@@ -134,6 +144,7 @@ var trivia = {
         }
 
     }
+
 };
     // You'll create a trivia game that shows only one question until the player answers it or their time runs out
 
