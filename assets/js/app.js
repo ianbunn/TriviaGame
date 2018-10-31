@@ -3,9 +3,11 @@ $(document).ready(function () {
 })
 
 var trivia = {
+
     correctAnswers: 0,
     incorrectAnswers: 0,
     unanswered: 0,
+
     questions: {
         question1: {
             question: "During his embarrassing Dundie award presentation, Michael covers a number of popular songs. To whom is Michael presenting a Dundie award when he sings along to 'You Sexy Thing' by '70s British funk band Hot Chocolate?",
@@ -19,6 +21,7 @@ var trivia = {
                 answer = this.choices[3]
             }
         },
+
         question2: {
             question: "What is Michael Scott's middle name?",
             choices: [
@@ -28,69 +31,88 @@ var trivia = {
                 "Gary"
             ],
             answer: function () {
-                answer = this.choices[1]
+                answer = this.choices[3]
             }
         },
+
         question3: {
-            question: "Which of these is NOT a name of one of the Office (Scranton, VA) employees?",
+            question: "What username did Michael use on his online dating site account?",
             choices: [
-                "Michael",
-                "Dwight",
-                "Kevin",
-                "Frederick"
-            ],
-            answer: function () {
-                answer = this.choices[1]
-            }
-        },
-        question4: {
-            question: "Which of these is NOT a name of one of the Office (Scranton, VA) employees?",
-            choices: [
-                "Michael",
-                "Dwight",
-                "Kevin",
-                "Frederick"
+                "LoverNotAFighter",
+                "CallMeMaybe",
+                "LittleKidLover",
+                "YouSexyThingYou"
             ],
             answer: function () {
                 answer = this.choices[2]
             }
         },
-        question5: {
-            question: "Which of these is NOT a name of one of the Office (Scranton, VA) employees?",
+
+        question4: {
+            question: "What is the exclusive club that Pam, Oscar, and Toby establish in the episode 'Branch Wars'",
             choices: [
-                "Michael",
-                "Dwight",
-                "Kevin",
-                "Frederick"
+                "Luxury Club",
+                "The Insiders Club",
+                "Thee Club",
+                "Finer Things Club"
             ],
             answer: function () {
                 answer = this.choices[3]
             }
         },
-        question6: {
-            question: "Which of these is NOT a name of one of the Office (Scranton, VA) employees?",
+
+        question5: {
+            question: "What is the name of the paper company where 'The Office' takes place?",
             choices: [
-                "Michael",
-                "Dwight",
-                "Kevin",
-                "Frederick"
+                "Office Depot",
+                "Dunder-Mifflin",
+                "The Paper Company",
+                "Dungler-Muffler"
             ],
             answer: function () {
-                answer = this.choices[0]
+                answer = this.choices[1]
             }
         },
-        question7: {
-            question: "Which of these is NOT a name of one of the Office (Scranton, VA) employees?",
+
+        question6: {
+            question: "At Jim and Pam's wedding in the 'Niagara' episode, what was Kevin wearing on his feet?",
             choices: [
+                "Dress shoes",
+                "Tennis shoes",
+                "Sandals",
+                "Tissue boxes"
+            ],
+            answer: function () {
+                answer = this.choices[3]
+            }
+        },
+
+        question7: {
+            question: "In the episode 'The Coup', the members of the Stamford branch play a video game with each other. However, Jim finds that he is completely inept at the game. What game is it?",
+            choices: [
+                "Geors of War",
+                "FIFA",
+                "Redemption",
+                "Call of Duty"
+            ],
+            answer: function () {
+                answer = this.choices[3]
+            }
+        },
+
+        question8: {
+            question: "Who admits responsibility for inhaling pot smoke at an Alicia Keys concert in 'Drug Testing'?",
+            choices: [
+                "Jim",
+                "Ryan",
                 "Michael",
-                "Dwight",
-                "Kevin",
-                "Frederick"
+                "Kelly"
             ],
             answer: function () {
                 answer = this.choices[1]
             }
         }
+
     }
 };
     // You'll create a trivia game that shows only one question until the player answers it or their time runs out
