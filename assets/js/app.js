@@ -1,5 +1,16 @@
 $(document).ready(function () {
 
+    $("#startGame").click(function() {
+
+        trivia.startGame();
+
+        // Timer to start when button is clicked
+        var timer = setInterval(function() {
+            $("#timer").html("Time Remaining: " + timer + " seconds")
+        }, 30 * 1000);
+
+    })
+
 })
 
 var trivia = {
@@ -7,7 +18,16 @@ var trivia = {
     correctAnswers: 0,
     incorrectAnswers: 0,
     unanswered: 0,
+    timer: 15,
+    startGame: function(){
 
+        // Starting game by adding hide and show element
+        $("#startGame").hide();
+        $("#timer").show();
+        $("#question").show();
+        $("#choices").show();
+        
+    },
     questions: {
         question1: {
             question: "During his embarrassing Dundie award presentation, Michael covers a number of popular songs. To whom is Michael presenting a Dundie award when he sings along to 'You Sexy Thing' by '70s British funk band Hot Chocolate?",
@@ -18,7 +38,7 @@ var trivia = {
                 "Ryan"
             ],
             answer: function() {
-                answer = this.choices[3]
+                answer = this.questions.question1.choices[3]
             }
         },
 
@@ -31,7 +51,7 @@ var trivia = {
                 "Gary"
             ],
             answer: function () {
-                answer = this.choices[3]
+                answer = this.questions.question2.choices[3]
             }
         },
 
@@ -44,7 +64,7 @@ var trivia = {
                 "YouSexyThingYou"
             ],
             answer: function () {
-                answer = this.choices[2]
+                answer = this.questions.question3.choices[2]
             }
         },
 
@@ -57,7 +77,7 @@ var trivia = {
                 "Finer Things Club"
             ],
             answer: function () {
-                answer = this.choices[3]
+                answer = this.questions.question4.choices[3]
             }
         },
 
@@ -70,7 +90,7 @@ var trivia = {
                 "Dungler-Muffler"
             ],
             answer: function () {
-                answer = this.choices[1]
+                answer = this.questions.question5.choices[1]
             }
         },
 
@@ -83,7 +103,7 @@ var trivia = {
                 "Tissue boxes"
             ],
             answer: function () {
-                answer = this.choices[3]
+                answer = this.questions.question6.choices[3]
             }
         },
 
@@ -96,7 +116,7 @@ var trivia = {
                 "Call of Duty"
             ],
             answer: function () {
-                answer = this.choices[3]
+                answer = this.questions.question7.choices[3]
             }
         },
 
@@ -109,7 +129,7 @@ var trivia = {
                 "Kelly"
             ],
             answer: function () {
-                answer = this.choices[1]
+                answer = this.questions.question8.choices[2]
             }
         }
 

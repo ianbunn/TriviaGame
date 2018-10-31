@@ -1,0 +1,3 @@
+.question, .choices, .rightAnswer, .wrongAnswer, .gameOver, .timer {
+    display: none;
+}

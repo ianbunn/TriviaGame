@@ -16,75 +16,94 @@
 </head>
 <body>
     <div class="container">
+
+        <br>
+
         <!-- Game Title and version -->
-        <div class="logo">
+        <div class="logo text-center">
             <h1>Totally Trivial Trivia!</h1>
         </div>
-        <div class="version">
+        <div class="version text-center">
             <h2>The Office version</h2>
         </div>
 
+        <br><br>
+
         <!-- Click to start game -->
-        <div id="startGame">
+        <div id="startGame" class="startGame text-center">
             Start
         </div>
 
         <!-- Shows time remaining per question -->
-        <div id="timer">
+        <div id="timer" class="timer text-center">
             Time Remaining: X seconds
         </div>
 
+        <br><br>
+
         <!-- Shows question for current round -->
-        <div id="question">
-            Which of these is NOT a name of one of the Office (Scranton, VA) employees?
+        <div id="question" class="question">
+            During his embarrassing Dundie award presentation, Michael covers a number of popular songs. To whom is Michael
+            presenting a Dundie award when he sings along to 'You Sexy Thing' by '70s British funk band Hot Chocolate?
         </div>
 
+        <br><br>
+
         <!-- Shows choices for current question -->
-        <div id="choice1">
-            Michael
-        </div>
-        <div id="choice2">
-            Dwight
-        </div>
-        <div id="choice3">
-            Kevin
-        </div>
-        <div id="choice4">
-            Frederick
+        <div id="choices" class="choices text-center">
+            <div id="choice1">
+                Michael
+            </div>
+            <br>
+            <div id="choice2">
+                Jim
+            </div>
+            <br>
+            <div id="choice3">
+                Meredith
+            </div>
+            <br>
+            <div id="choice4">
+                Ryan
+            </div>
         </div>
 
         <!-- Shows correct based on user's choice with a gif -->
-        <div id="rightAnswer">
+        <div id="rightAnswer" class="rightAnswer">
             Correct!
+            <img src="" alt="correct GIF" srcset="">
         </div>
-        <img src="" alt="correct GIF" srcset="">
+        
         
         <!-- Shows incorrect based on user's choice with a gif -->
-        <div id="wrongAnswer">
+        <div id="wrongAnswer" class="wrongAnswer">
             Nope!
+            <div id="rightChoice">
+                The correct answer was: Frederick
+            </div>
+            <img src="" alt="incorrect GIF" srcset="">
         </div>
-        <div id="rightChoice">
-            The correct answer was: Frederick
-        </div>
-        <img src="" alt="incorrect GIF" srcset="">
+        
 
-        <!-- Shows scoreboard after game is over -->
-        <div id="gameOver">
+        <!-- Game is over -->
+        <div id="gameOver" class="gameOver">
             All done, here's how you did!
-        </div>
-        <div id="correctAnswers">
-            Correct Answers: X
-        </div>
-        <div id="incorrectAnswers">
-            Incorrect Answers: X
-        </div>
-        <div id="unanswered">
-            Unanswered: X
-        </div>
 
-        <!-- Click to start game again -->
-        <div id="restart">
-            New Game?
+            <!-- Show scoreboard -->
+            <div id="correctAnswers">
+            Correct Answers: X
+            </div>
+            <div id="incorrectAnswers">
+                Incorrect Answers: X
+            </div>
+            <div id="unanswered">
+                Unanswered: X
+            </div>
+
+            <!-- Click to start game again -->
+            <div id="restart" class="restart">
+                New Game?
+            </div>
         </div>
         
     </div>
