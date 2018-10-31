@@ -170,3 +170,7 @@ var trivia = {
     // If the player chooses the wrong answer, tell the player they selected the wrong option and then display the correct answer.Wait a few seconds, then show the next question
 
     // On the final screen, show the number of correct answers, incorrect answers, and an option to restart the game(without reloading the page)
+
+    // Example from jaymar14 from Github https://github.com/jaymar14/TriviaGame/blob/master/assets/js/app.js
+
+    // Example from harpalassi from Github https://github.com/harpalassi/TriviaGame/blob/master/assets/javascript/app.js
