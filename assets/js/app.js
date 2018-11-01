@@ -3,8 +3,6 @@ $(document).ready(function () {
     $("#startGame").click(function() {
 
         trivia.startGame();
-        trivia.loadQuestion();
-        
 
     })
 
@@ -30,11 +28,16 @@ var trivia = {
             timerLeft--;
             $("#timer").text("Time Remaining: " + timerLeft + " seconds");
 
+
+
             // If timerLeft is 0 then show unanswered
             if(timerLeft === 0){
                 $("#question").hide();
                 $("#choices").hide();
                 $("#unanswered").show();
+
+                this.qRound=1;
+                
             }
 
         }
@@ -59,12 +62,13 @@ var trivia = {
     // Load the question
     loadQuestion: function() {
 
+        
         $("#question").text(this.questions.question1.question);
         $("#question").show();
 
     },
 
-    // Load the choices
+    // Load the choices, looks pretty redundant, so it can be cleaned up
     loadChoices: function() {
 
         $("#choice1").text(this.questions.question1.choices[0]);
@@ -78,6 +82,7 @@ var trivia = {
 
     },
 
+    // There is nothing in this trivia.checkAnswer method !!!NEEED TO WORK ON IT!!!
     checkAnswer: function() {
 
         // if user clicks on correct div
@@ -91,7 +96,7 @@ var trivia = {
 
     },
 
-    // Questions set as an object with props and array choices
+    // Questions set as an object with props, array choices and answer
     questions: {
         question1: {
             question: "During his embarrassing Dundie award presentation, Michael covers a number of popular songs. To whom is Michael presenting a Dundie award when he sings along to 'You Sexy Thing' by '70s British funk band Hot Chocolate?",
