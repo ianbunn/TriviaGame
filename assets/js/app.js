@@ -3,10 +3,16 @@ $(document).ready(function () {
     $("#startGame").click(function() {
 
         trivia.startGame();
+        trivia.loadQuestion();
+        
 
     })
 
 })
+
+var ticker = 1;
+
+var timerLeft = 5;
 
 // Trivia object with properties and methods to start and run the game
 var trivia = {
@@ -15,28 +21,23 @@ var trivia = {
     correctAnswers: 0,
     incorrectAnswers: 0,
     unanswered: 0,
-    timeLeft: "",
+    qRound: 0,
     timerId: "",
+    countdown: function() {
 
-    // Working the timer as a method of trivia (starting again here)
-    timer: function() {
-        clearInterval(timeLeft);
+        // If timerLeft is not equal to zero, substract 1 and append that timerLeft to #timer
+        if (timerLeft != 0) {
+            timerLeft--;
+            $("#timer").text("Time Remaining: " + timerLeft + " seconds");
 
-        // Working on the timer for the questions (the below doesn't work)
-        // timer = setInterval(function () {
+            // If timerLeft is 0 then show unanswered
+            if(timerLeft === 0){
+                $("#question").hide();
+                $("#choices").hide();
+                $("#unanswered").show();
+            }
 
-        //     var timeLeft = 15;
-
-        //     this.timer - --timeLeft;
-
-        //     $("#timer").html("Time Remaining: " + this.startGame.timeLeft + " seconds");
-
-        //     if (timeLeft <= 0) {
-        //         clearInterval(this.timeLeft);
-        //     }
-
-        // }, 1000);
-        
+        }
     },
 
     // Start game with trivia's method
@@ -45,12 +46,52 @@ var trivia = {
         // Starting game by adding hide and show
         $("#startGame").hide();
         $("#timer").show();
+
+        // Load question and choices
+        this.loadQuestion();
+        this.loadChoices();
+
+        // Run trivia countdown method every second when game is started
+        setInterval(this.countdown, 1000);
+
+    },
+
+    // Load the question
+    loadQuestion: function() {
+
+        $("#question").text(this.questions.question1.question);
         $("#question").show();
+
+    },
+
+    // Load the choices
+    loadChoices: function() {
+
+        $("#choice1").text(this.questions.question1.choices[0]);
+        $("#choices").show();
+        $("#choice2").text(this.questions.question1.choices[1]);
+        $("#choices").show();
+        $("#choice3").text(this.questions.question1.choices[2]);
+        $("#choices").show();
+        $("#choice4").text(this.questions.question1.choices[3]);
         $("#choices").show();
 
     },
 
-    // Questions set as an object with properties
+    checkAnswer: function() {
+
+        // if user clicks on correct div
+        // show correct answer
+
+        // else if user clicks on incorrect div
+        // show incorrect answer
+
+        // else user doesn't click on any div
+        // show unanswered
+
+    },
+
+    // Questions set as an object with props and array choices
     questions: {
         question1: {
             question: "During his embarrassing Dundie award presentation, Michael covers a number of popular songs. To whom is Michael presenting a Dundie award when he sings along to 'You Sexy Thing' by '70s British funk band Hot Chocolate?",
@@ -60,9 +101,7 @@ var trivia = {
                 "Meredith",
                 "Ryan"
             ],
-            answer: function() {
-                answer = this.questions.question1.choices[3]
-            }
+            answer: "Ryan"
         },
 
         question2: {
@@ -73,9 +112,7 @@ var trivia = {
                 "George",
                 "Gary"
             ],
-            answer: function () {
-                answer = this.questions.question2.choices[3]
-            }
+            answer: "Gary"
         },
 
         question3: {
@@ -86,9 +123,7 @@ var trivia = {
                 "LittleKidLover",
                 "YouSexyThingYou"
             ],
-            answer: function () {
-                answer = this.questions.question3.choices[2]
-            }
+            answer: "LittleKidLover"
         },
 
         question4: {
@@ -99,9 +134,7 @@ var trivia = {
                 "Thee Club",
                 "Finer Things Club"
             ],
-            answer: function () {
-                answer = this.questions.question4.choices[3]
-            }
+            answer: "Finer Things Club"
         },
 
         question5: {
@@ -112,9 +145,7 @@ var trivia = {
                 "The Paper Company",
                 "Dungler-Muffler"
             ],
-            answer: function () {
-                answer = this.questions.question5.choices[1]
-            }
+            answer: "Dunder-Mifflin"
         },
 
         question6: {
@@ -125,9 +156,7 @@ var trivia = {
                 "Sandals",
                 "Tissue boxes"
             ],
-            answer: function () {
-                answer = this.questions.question6.choices[3]
-            }
+            answer: "Tissue boxes"
         },
 
         question7: {
@@ -138,9 +167,7 @@ var trivia = {
                 "Redemption",
                 "Call of Duty"
             ],
-            answer: function () {
-                answer = this.questions.question7.choices[3]
-            }
+            answer: "Call of Duty"
         },
 
         question8: {
@@ -151,26 +178,9 @@ var trivia = {
                 "Michael",
                 "Kelly"
             ],
-            answer: function () {
-                answer = this.questions.question8.choices[2]
-            }
+            answer: "Michael"
         }
 
     }
 
 };
-    // You'll create a trivia game that shows only one question until the player answers it or their time runs out
-
-    // If the player selects the correct answer, show a screen congratulating them for choosing the right option.After a few seconds, display the next question-- do this without user input
-
-    // The scenario is similar for wrong answers and time - outs
-
-    // If the player runs out of time, tell the player that time's up and display the correct answer. Wait a few seconds, then show the next question
-
-    // If the player chooses the wrong answer, tell the player they selected the wrong option and then display the correct answer.Wait a few seconds, then show the next question
-
-    // On the final screen, show the number of correct answers, incorrect answers, and an option to restart the game(without reloading the page)
-
-    // Example from jaymar14 from Github https://github.com/jaymar14/TriviaGame/blob/master/assets/js/app.js
-
-    // Example from harpalassi from Github https://github.com/harpalassi/TriviaGame/blob/master/assets/javascript/app.js

@@ -6,11 +6,11 @@
     font-family: 'Zilla Slab Highlight', cursive;
 }
 
-.question, .choices, .rightAnswer, .wrongAnswer, .gameOver, .timer {
+.question, .choices, .rightAnswer, .wrongAnswer, .unanswered, .gameOver, .timer {
     display: none;
 }
 
-.startGame, .timer, .question, .choices, .rightAnswer, .wrongAnswer, .gameOver, .restart {
+.startGame, .timer, .question, .choices, .rightAnswer, .wrongAnswer, .unanswered, .gameOver, .restart {
     font-family: 'Cutive Mono', monospace;
 }
 
