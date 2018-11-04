@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trivia Game</title>
+    <title>Trivia Game - The Office</title>
     <!-- jQuery CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Meyer's reset CSS -->
     <link rel="stylesheet" href="assets/css/reset.css">
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!-- Google font Monoton -->
+    <!-- Google font Zilla Slab Highlight and Cutive Mono -->
     <link href="https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight|Cutive+Mono" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style2.css">
 </head>
+
 <body>
+
     <div class="container">
-        <img src="assets/images/theofficeimg.png" />
+
         <br>
 
         <!-- Game Title and version -->
@@ -26,105 +29,37 @@
             <h1>Totally Trivial Trivia!</h1>
         </div>
 
-        <br>
-
         <div class="version text-center">
             <h2>The Office version</h2>
         </div>
 
         <br><br>
 
-        <!-- Click to start game -->
-        <div class="row">
+        <div class="row text-center">
             <div class="col-sm-5 col-sm-offset-5"></div>
-            <div id="startGame" class="startGame col-sm-2 text-center">
-                Start
-            </div>
+            <div class="startGame col-sm-2 text-center" id="start">Start</div>
             <div class="col-sm-5 col-sm-offset-5"></div>
         </div>
 
-        <!-- Shows time remaining per question -->
-        <div id="timer" class="timer text-center">
-            Time Remaining: 15 seconds
+        <div class="row text-center">
+            <div class="col-12" id="timer"></div>
         </div>
-
         <br>
 
-        <!-- Shows question for current round -->
-        <div id="question" class="question">
-            Question
+        <div class="row text-center">
+            <div class="col-12" id="round"></div>
         </div>
-
         <br>
 
-        <!-- Shows choices for current question -->
-        <div id="choices" class="choices text-center">
-            <div id="choice1">
-                Choice 1
-            </div>
-            <br>
-            <div id="choice2">
-                Choice 2
-            </div>
-            <br>
-            <div id="choice3">
-                Choice 3
-            </div>
-            <br>
-            <div id="choice4">
-                Choice 4
-            </div>
+        <div class="row text-center">
+            <div class="col-12" id="choices"></div>
         </div>
 
-        <!-- Shows correct based on user's choice with a gif -->
-        <div id="rightAnswer" class="rightAnswer text-center">
-            Correct!
-            <img src="" alt="correct GIF" srcset="">
-        </div>
-        
-        
-        <!-- Shows incorrect based on user's choice with a gif -->
-        <div id="wrongAnswer" class="wrongAnswer text-center">
-            Nope!
-            <div id="rightChoice">
-                The correct answer was: Frederick
-            </div>
-            <img src="" alt="incorrect GIF" srcset="">
-        </div>
-        
-        <!-- Shows incorrect based on user's choice with a gif -->
-        <div id="unanswered" class="unanswered text-center">
-            You ran out of time!
-            <div id="rightChoice">
-                The correct answer was: Frederick
-            </div>
-            <img src="" alt="unanswered GIF" srcset="">
-        </div>
-        
-
-        <!-- Game is over -->
-        <div id="gameOver" class="gameOver">
-            All done, here's how you did!
-
-            <!-- Show scoreboard -->
-            <div id="correctAnswers">
-            Correct Answers: X
-            </div>
-            <div id="incorrectAnswers">
-                Incorrect Answers: X
-            </div>
-            <div id="unanswered">
-                Unanswered: X
-            </div>
-
-            <!-- Click to start game again -->
-            <div id="restart" class="restart">
-                New Game?
-            </div>
-        </div>
-        
     </div>
+
 </body>
-    <!-- Custom JS -->
-    <script src="assets/js/app.js"></script>
+
+<!-- Custom JS -->
+<script src="assets/js/app2.js"></script>
+
 </html>

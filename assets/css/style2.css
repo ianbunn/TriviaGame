@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/theofficeimg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Cutive Mono', monospace;
+}
+
+.logo,.version {
+    font-family: 'Zilla Slab Highlight', cursive;
+}
+
+.startGame {
+    border: solid 2px black;
+    background-color: black;
+    color: white;
+    width: 10px;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+.startGame:hover {
+    background-color: white;
+    color: black;
+}
+
+.answer:hover {
+    width: 60%;
+    border: 2px black dotted;
+    margin: auto;
+}
+
+#rightAnswerChoice {
+    font-weight: 900;
+}
+
+#newGame {
+    border: solid 2px black;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+#newGame:hover {
+    background-color: white;
+    color: black;
+}
+
+@media only screen and (max-width: 960px) {
+    .container {
+        margin-top: 200px;
+    }
+
+    .logo, .version {
+        font-size: 1.2em;
+    }
+}
+@media only screen and (max-width: 583px) {
+    .startGame{
+        position: relative;
+        left: 150px;
+        width: 100px;
+    }
+}

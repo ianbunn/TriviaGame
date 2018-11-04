@@ -1,8 +1,4 @@
-.logo {
-    font-family: 'Zilla Slab Highlight', cursive;
-}
-
-.version {
+.logo, .version {
     font-family: 'Zilla Slab Highlight', cursive;
 }
 

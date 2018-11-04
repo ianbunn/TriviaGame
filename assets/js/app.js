@@ -157,7 +157,7 @@ var trivia = {
             question: "At Jim and Pam's wedding in the 'Niagara' episode, what was Kevin wearing on his feet?",
             choices: [
                 "Dress shoes",
-                "Tennis shoes",
+                "Dress shoes",
                 "Sandals",
                 "Tissue boxes"
             ],
